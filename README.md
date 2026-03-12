@@ -1,4 +1,4 @@
-# Mini Browser Simulator
+# Homework: Mini Browser Simulator
 
 ## General Description
 This C program simulates a simplified browser with multi-tab functionality. The user can open web pages, navigate forward and backward through history, open and close tabs, switch between tabs, and view browsing history.
@@ -63,32 +63,32 @@ typedef struct browser {
 ###  2. Functionality
 
 #### Web Pages
-Web pages are created using the create_page() function and freed from memory using the free_page() function. Each page contains an identifier (id), a url, and a description.
+Web pages are created using the `create_page()` function and freed from memory using the `free_page()` function. Each page contains an identifier (id), a url, and a description.
 
 #### Stacks
-Browsing history is managed using stacks. Stack operations are performed through the push(), pop(), is_empty(), and free_stack() functions, which allow adding, removing, checking, and freeing elements from the stack.
+Browsing history is managed using stacks. Stack operations are performed through the `push()`, `pop()`, `is_empty()`, and `free_stack()` functions, which allow adding, removing, checking, and freeing elements from the stack.
 
 #### Tabs
-A new tab is created using the create_tab() function. Each tab maintains its own browsing history, both for previously visited pages (backward) and for pages that can be revisited (forward).
+A new tab is created using the `create_tab()` function. Each tab maintains its own browsing history, both for previously visited pages (backward) and for pages that can be revisited (forward).
 
 #### Browser
-The browser is initialized through the init_browser() function, which creates an initial tab and opens a default page.
+The browser is initialized through the `init_browser()` function, which creates an initial tab and opens a default page.
 
-The new_tab() function allows opening a new tab, and close_current_tab() closes the current tab.
+The `new_tab()` function allows opening a new tab, and `close_current_tab()` closes the current tab.
 
-Navigation between tabs is done with next_tab() and prev_tab().
+Navigation between tabs is done with `next_tab()` and `prev_tab()`.
 
-The open_tab_by_id() function sets the tab with a specific identifier as active.
+The `open_tab_by_id()` function sets the tab with a specific identifier as active.
 
-Opening a new page in a tab is done with open_page(), simultaneously updating the browsing history.
+Opening a new page in a tab is done with `open_page()`, simultaneously updating the browsing history.
 
-The print_tabs() function displays all tabs and the current page, while print_history() displays the browsing history for a specific tab.
+The `print_tabs()` function displays all tabs and the current page, while `print_history()` displays the browsing history for a specific tab.
 
-History navigation is performed through the go_backward() and go_forward() functions.
+History navigation is performed through the `go_backward()` and `go_forward()` functions.
 
-Finally, the free_browser() function frees the memory allocated for the browser structures.
+Finally, the `free_browser()` function frees the memory allocated for the browser structures.
 
-### Error Handling
+### 3. Error Handling
 The program handles the following edge cases:
 - Attempting to navigate back when no history exists
 - Attempting to navigate forward when no forward history exists
@@ -96,8 +96,8 @@ The program handles the following edge cases:
 - Switching to a non-existent tab ID
 - Opening invalid URLs
 
-### Example
-**Input (tema1.in):** <br>
+### 4. Example
+**Input `tema1.in `:** <br>
 0 <br>
 9 <br>
 NEW_TAB <br>
@@ -110,13 +110,13 @@ NEW_TAB <br>
 OPEN 4 <br>
 PRINT <br>
 
-**Output (tema1.out):** <br>
+**Output `tema1.out`:** <br>
 2 3 0 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  # First PRINT output <br>
 Computer Science <br>
 4 0 1 2 3 &nbsp; &nbsp; &nbsp; &nbsp; # Second PRINT output <br>
 Computer Science <br>
 
-### Compilation and Usage
+### 5. Compilation and Usage
 
 #### Compile:
 ```bash
@@ -128,7 +128,7 @@ make build
 make run
 ```
 
-### Tests
+### 6. Tests
 The program includes a comprehensive testing framework with the following components: 
 
 ```bash
@@ -164,15 +164,15 @@ To run the tests and checker script, you need:
 - **Valgrind** - Memory leak detection (optional but recommended)
 - **dos2unix** - Line ending conversion (for cross-platform compatibility)
 
-#### Installation
-**Ubuntu/Debian:**
+#### Installation:
+Ubuntu/Debian:<br>
 
 ```bash
 sudo apt-get update
 sudo apt-get install gcc valgrind dos2unix
 ```
 
-**Windows (WSL):**
+Windows (WSL):<br>
 ```bash
 sudo apt-get update
 sudo apt-get install gcc valgrind dos2unix build-essential
